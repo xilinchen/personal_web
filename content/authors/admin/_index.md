@@ -1,29 +1,25 @@
 ---
 authors:
 - admin
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: My research interests include 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: Master of Public Health
+    institution: University of Pittsburgh
+    year: 2016
+  - course: BSc in Food Science and Engineering
+    institution: Sichuan Agricultural University
+    year: 2014
 email: ""
 interests:
 - Artificial Intelligence
 - Computational Linguistics
 - Information Retrieval
-name: Nelson Bighetti
+name: Xilin Chen
 organizations:
-- name: Stanford University
-  url: ""
-role: Professor of Artificial Intelligence
+- name: University of Michigan
+  url: "https://umich.edu/"
+role: Data Analyst
 social:
 - icon: envelope
   icon_pack: fas

@@ -1,45 +1,48 @@
 ---
 authors:
-- xilin
-bio: Data Analyst at the University of Michigan
+- admin
+bio: My research interests include distributed robotics, mobile computing and programmable
+  matter.
 education:
   courses:
-  - course: Master of Public Health
-    institution: University of Pittsburgh
-    year: 2016
-  - course: BSc in Food Science and Engineering
-    institution: Sichuan Agricultural University
-    year: 2014
+  - course: PhD in Artificial Intelligence
+    institution: Stanford University
+    year: 2012
+  - course: MEng in Artificial Intelligence
+    institution: Massachusetts Institute of Technology
+    year: 2009
+  - course: BSc in Artificial Intelligence
+    institution: Massachusetts Institute of Technology
+    year: 2008
 email: ""
 interests:
-- Data Analysis
-- Healthcare Research
-- Data Privacy
-name: Xilin Chen
+- Artificial Intelligence
+- Computational Linguistics
+- Information Retrieval
+name: Nelson Bighetti
 organizations:
-- name: University of Michigan
+- name: Stanford University
   url: ""
-role: Data Analyst
+role: Professor of Artificial Intelligence
 social:
 - icon: envelope
   icon_pack: fas
-  link: xilin.chen24@gmail.com
-- icon: linkedin
+  link: '#contact'
+- icon: twitter
   icon_pack: fab
-  link: https://www.linkedin.com/in/xilin-chen-31801b98/
+  link: https://twitter.com/GeorgeCushen
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/xilinchen
+  link: https://github.com/gcushen
 superuser: true
 user_groups:
 - Researchers
 - Visitors
 ---
 
-I am an data analyst with expertise in healthcare research. I enjoy working in an interdisciplinary team and solving various data challenges!
+Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 
-I'm originally from Chengdu, Sichuan, China and moved to the U.S. for my master's degree. My career is majorly focus on Healthcare field. I have worked in substance abuse, trauma transportation and surgical education research. I found working in healthcare research very interesting, challenging and fulfilling.
-
-Today I am a Statistician a.k.a. 'big data analyst' for the Center for Surgical Training and Research. I work with Dr. Brian George to analyze surgeon performance and career outcomes. We use data including medicare, EMR and resident preforming evaluation data to develop evidence based training standards for our future surgeons. I have challenges every day and learned a lot from data visualization to modeling techniques.
-
-In my free time, I enjoy walking, gardening and cooking!
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 

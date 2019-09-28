@@ -34,6 +34,3 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
-
-public/
-.DS_Store # if a windows user, Thumbs.db instead

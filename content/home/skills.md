@@ -27,9 +27,9 @@ subtitle = ""
   description = "100%"  
   
 [[feature]]
-  icon = "camera-retro"
+  icon = "carrot"
   icon_pack = "fas"
-  name = "Photography"
-  description = "10%"
+  name = "Cooking"
+  description = "30%"
 
 +++

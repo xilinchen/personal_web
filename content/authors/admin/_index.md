@@ -36,10 +36,8 @@ user_groups:
 - Visitors
 ---
 
-I am a data analyst with expertise in healthcare research. I enjoy working in an interdisciplinary team and solving data challenges!
+I'm a data analyst with expertise in healthcare research. I enjoy working in an interdisciplinary team and solving data challenges!
 
-I'm originally from Chengdu, Sichuan, China and moved to the U.S. for my master's degree. My career is majorly focus on Healthcare field. I have worked in substance abuse, trauma transportation and surgical education research. I found working in healthcare research very interesting, challenging and fulfilling.
+I'm originally from [Chengdu](https://en.wikipedia.org/wiki/Chengdu) and moved to the U.S. for my master's degree. My career has been majorly focus on healthcare related research. I have worked in substance abuse, trauma transportation and surgical education research. I found working in healthcare research very interesting, challenging and fulfilling. Today I am a statistician for the Center for Surgical Training and Research at the University of Michigan.
 
-Today I am a Statistician a.k.a. 'big data analyst' for the Center for Surgical Training and Research at the University of Michigan. I work with Dr. Brian George to analyze surgeon performance and career outcomes. We use data including medicare, EMR and resident preforming evaluation data to develop evidence based training standards for our future surgeons. I am challenged every day and learned a lot from data visualization to modeling techniques.
-
-In my free time, I enjoy walking, gardening and cooking!
+My first name is pronounced as "She-lynn". In my free time, I enjoy walking, gardening and cooking!

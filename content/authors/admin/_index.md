@@ -23,7 +23,7 @@ social:
 social:
 - icon: envelope
   icon_pack: fas
-  link: xilin.chen24@gmail.com
+  link: mailto:xilin.chen24@gmail.com
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/xilin-chen-31801b98/

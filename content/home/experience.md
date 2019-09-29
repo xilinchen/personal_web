@@ -18,8 +18,8 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "Statistician Intermidiate"
-  company = "Univeristy of Michigan"
+  title = "Statistician Intermediate"
+  company = "University of Michigan"
   company_url = ""
   location = "Ann Arbor, Michigan"
   date_start = "2018-07-01"
@@ -28,7 +28,7 @@ date_format = "Jan 2006"
 
   Responsibilities include:
   
-  * Analysing
+  * Analyzing
   * Modelling
   * Visualization
   """
@@ -38,8 +38,30 @@ date_format = "Jan 2006"
   company = "University of Pittsburgh"
   company_url = ""
   location = "Pittsburgh, PA"
-  date_start = "2016-01-01"
-  date_end = "2017-12-31"
+  date_start = "2017-01-01"
+  date_end = "2018-12-31"
   description = """Served as a statistical consultant and analyst for [Pittsburgh Surgical Outcomes Research Center in Department of Surgery](http://surgicaloutcomes.pitt.edu/)"""
+  
+  
+[[experience]]
+  title = "Research Specialist"
+  company = "University of Pittsburgh"
+  company_url = ""
+  location = "Pittsburgh, PA"
+  date_start = "2016-04-01"
+  date_end = "2017-01-01"
+  description = """Conducted data collection,evaluation,and reporting for substance abuse projects at [Program evaluation and Research Unit](http://www.peru.pitt.edu/) """
+  
+[[experience]]
+  title = "Intern"
+  company = "University of Pittsburgh"
+  company_url = ""
+  location = "Pittsburgh, PA"
+  date_start = "2015-07-01"
+  date_end = "2015-08-01"
+  description = """[Bridging the Gap](https://www.publichealth.pitt.edu/bridging-the-gaps-internship) intern served at an underserved community - [Braddock, Pennsylvania](https://en.wikipedia.org/wiki/Braddock,_Pennsylvania)
 
+* Food insecurity
+* Minority
+"""
 +++

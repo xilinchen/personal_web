@@ -33,11 +33,11 @@ social:
 superuser: true
 user_groups:
 - Researchers
-- Visitors
+# - Visitors
 ---
 
 I'm a data analyst with expertise in healthcare research. I enjoy working in an interdisciplinary team and solving data challenges!
 
-I'm originally from [Chengdu](https://en.wikipedia.org/wiki/Chengdu) and moved to the U.S. for my master's degree. My career has been majorly focus on healthcare related research. I have worked in substance abuse, trauma transportation and surgical education research. I found working in healthcare research very interesting, challenging and fulfilling. Today I am a statistician for the Center for Surgical Training and Research at the University of Michigan.
+I'm originally from [Chengdu](https://en.wikipedia.org/wiki/Chengdu) and moved to the U.S. for my master's degree. My career has been majorly focus on healthcare related research including substance abuse, trauma transportation and surgical education. I found working in healthcare research very interesting, challenging and fulfilling! Today I am a statistician for the Center for Surgical Training and Research at the University of Michigan.
 
-My first name is pronounced as "She-lynn". In my free time, I enjoy walking, gardening and cooking!
+My first name is pronounced "She-lynn". In my free time, I enjoy walking, gardening and cooking!

@@ -1,17 +1,17 @@
 # Theme metadata
-name = "Ocean"
+name = "Michigan"
 
 # Is theme light or dark?
 light = true
 
 # Primary
-primary = "#3f51b5"
+primary = "#00274c"
 
 # Menu
-menu_primary = "#3f51b5" # 500
-menu_text = "#fff"
+menu_primary = "#00274c" # 500
+menu_text = "#ffcb05"
 menu_text_active = "#8c9eff" # A100
-menu_title = "#fff"
+menu_title = "#ffcb05"
 
 # Home sections
 home_section_odd = "rgb(255, 255, 255)"

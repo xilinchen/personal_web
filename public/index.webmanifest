@@ -2,8 +2,8 @@
   "name": "Xilin Chen",
   "short_name": "Xilin Chen",
   "lang": "en-us",
-  "theme_color": "#2962ff",
-  "background_color": "#2962ff",
+  "theme_color": "#00274c",
+  "background_color": "#00274c",
   "icons": [{
     "src": "img/icon-192.png",
     "sizes": "192x192",

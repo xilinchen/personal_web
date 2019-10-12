@@ -2,7 +2,7 @@
 date: "2019-07-12"
 diagram: true
 image:
-  caption: 'Image credit: [**John Moeses Bauan**](https://unsplash.com/photos/OGZtQF8iC0g)'
+  caption: 'Image credit: [**John Moeses Bauan**](https://unsplash.com/photos/4hhP-Ud4e84)'
   placement: 3
 markup: mmark
 math: true

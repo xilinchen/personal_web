@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: My research interests include 
+bio: 
 education:
   courses:
   - course: Master of Public Health
@@ -18,7 +18,7 @@ name: Xilin Chen
 organizations:
 - name: University of Michigan
   url: "https://umich.edu/"
-role: Data Analyst
+role: Data Scientist
 social:
 social:
 - icon: envelope

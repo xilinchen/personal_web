@@ -99,6 +99,8 @@ blogdown::hugo_version()
 
 wow!!! Now your website should be on the internet now!!!
 
+https://happy-shockley-557457.netlify.com/
+
 
 
 

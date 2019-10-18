@@ -13,13 +13,13 @@
     </image>
     
     <item>
-      <title>Display Jupyter Notebooks with Academic</title>
-      <link>/post/jupyter-copy/</link>
+      <title>How I build Hugo Academic in RStudio</title>
+      <link>/post/build_hugo_webiste/</link>
       <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>/post/jupyter-copy/</guid>
+      <guid>/post/build_hugo_webiste/</guid>
       <description>
 
-&lt;p&gt;I recently did this website using Hugo Academic theme. There are a lot resources on the internet that are very helpful. But, I still find setting up this website was not easy. In this post, I will write down step by step tutorial using Rstudio and Github to build this website. I hope following my steps would make your experience with Hugo Academic easier! My disclosure is that I have very liitle experience in building website.&lt;/p&gt;
+&lt;p&gt;I recently did this website using Hugo Academic theme. There are a lot resources on the internet that are very helpful. But, I still find setting up this website was not easy. In this post, I will write down a step by step tutorial using Rstudio and Github to build this website. I hope following my steps would make your experience with Hugo Academic easier! I have very little experience in building website.&lt;/p&gt;
 
 &lt;h2 id=&#34;step-1-create-a-repo-on-github&#34;&gt;Step 1: create a repo on github.&lt;/h2&gt;
 
@@ -31,10 +31,75 @@
 
 &lt;h2 id=&#34;step-2-create-hugo-academic-using-rstudio&#34;&gt;Step 2: create Hugo Academic using Rstudio!&lt;/h2&gt;
 
-&lt;p&gt;Using Rstudio to setup the website is the most convienit and straigt forway way to setup the website.&lt;/p&gt;
+&lt;p&gt;Using Rstudio to setup the website is the most convienit and straight-forward way to setup the website. Open the webiste folder through RStudio.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(blogdown)
+
+#create a new site with the academic theme
+blogdown::new_site(theme = &amp;quot;gcushen/hugo-academic&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;RStudio will create all the folders and files you need for the site. Once you run the &lt;em&gt;new_site&lt;/em&gt; code, you will already have a default website running!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./default_web.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;get-it-running-on-netlify&#34;&gt;Get it running on Netlify&lt;/h2&gt;
+
+&lt;p&gt;I found this is the most confusing and frastrating was to put my website on the internet. So I would recomment put your website on netlify and then make changes to your web. Below are the steps:&lt;/p&gt;
+
+&lt;p&gt;Step1. go to &lt;em&gt;&lt;a href=&#34;https://www.netlify.com/&#34; target=&#34;_blank&#34;&gt;https://www.netlify.com/&lt;/a&gt;&lt;/em&gt; and sign up your account.&lt;/p&gt;
+
+&lt;p&gt;Step2. Once your are signed in, click New Site From Git&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./build_new_web.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Step3. Add your website repo from Github on it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./net2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Step4. Then Deploy Site&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./deploy.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;change-some-parameters-in-files&#34;&gt;Change some parameters in files&lt;/h2&gt;
+
+&lt;p&gt;The site is still not running yet.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;change the url in your &lt;em&gt;config.toml&lt;/em&gt; file&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# The URL of your site.
+# End your URL with a `/` trailing slash, e.g. `https://example.com/`.
+baseurl = &amp;quot;https://happy-shockley-557457.netlify.com/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create a netlify.toml&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# check your huogo version
+blogdown::hugo_version()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;r&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;[build]
+publish = &amp;quot;public&amp;quot;
+command = &amp;quot;hugo&amp;quot;
+[context.production.environment]
+HUGO_VERSION = &amp;quot;0.58.1&amp;quot;
+HUGO_ENV = &amp;quot;production&amp;quot;
+HUGO_ENABLEGITINFO = &amp;quot;true&amp;quot;
+[context.branch-deploy.environment]
+HUGO_VERSION = &amp;quot;0.58.1&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;./netlify.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Commit and push all your files in Rstudio to Github!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;wow!!! Now your website should be on the internet now!!!&lt;/p&gt;
 </description>
     </item>
     

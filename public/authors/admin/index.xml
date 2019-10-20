@@ -5,12 +5,24 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Xilin Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 20 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Xilin Chen</title>
       <link>/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>What Do I Do With So Many Apples</title>
+      <link>/fun/apple_picking/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/fun/apple_picking/</guid>
+      <description>
+
+
+
+</description>
+    </item>
     
     <item>
       <title>How I build Hugo Academic in RStudio</title>

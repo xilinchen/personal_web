@@ -1,0 +1,12 @@
+---
+title: 'What Do I Do With So Many Apples'
+summary: Why you should use a netlify.toml file in your blogdown site
+authors:
+  - admin
+date: '2019-10-20'
+image:
+  caption: '[Photo by Thomas Millot on Unsplash](https://unsplash.com/photos/bInuR-nuU9o)'
+focal_point: 'center'
+categories: [life]
+tags: [apple]
+---

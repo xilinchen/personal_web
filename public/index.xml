@@ -106,6 +106,18 @@
     </item>
     
     <item>
+      <title>What Do I Do With So Many Apples</title>
+      <link>/fun/apple_picking/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/fun/apple_picking/</guid>
+      <description>
+
+
+
+</description>
+    </item>
+    
+    <item>
       <title>How I build Hugo Academic in RStudio</title>
       <link>/post/build_hugo_webiste/</link>
       <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
@@ -196,14 +208,6 @@ HUGO_VERSION = &amp;quot;0.58.1&amp;quot;
 
 &lt;p&gt;&lt;a href=&#34;https://happy-shockley-557457.netlify.com/&#34; target=&#34;_blank&#34;&gt;https://happy-shockley-557457.netlify.com/&lt;/a&gt;&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Fun</title>
-      <link>/fun/</link>
-      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>/fun/</guid>
-      <description></description>
     </item>
     
     <item>

@@ -2,6 +2,6 @@
 header:
   caption: ""
   image: ""
-title: fun
+title: Fun
 view: 2
 ---

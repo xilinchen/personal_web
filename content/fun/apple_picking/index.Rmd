@@ -1,6 +1,6 @@
 ---
 title: 'Aftermath of Apple Picking - So Many Apples'
-summary: 
+summary: 'Ideas and Recipe'
 authors:
   - admin
 date: '2019-10-20'

@@ -42,5 +42,5 @@
     
  [[main]]
     name = "Fun"
-    url = "#fun"
+    url = "/fun"
     weight = 80

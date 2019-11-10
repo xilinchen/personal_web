@@ -34,7 +34,22 @@
   
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/sparklyr_medicare/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -44,11 +59,6 @@
   
   <url>
     <loc>/tags/apple/</loc>
-    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
     <lastmod>2019-10-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -74,11 +84,6 @@
   
   <url>
     <loc>/post/build_hugo_webiste/</loc>
-    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
     <lastmod>2019-10-12T00:00:00+00:00</lastmod>
   </url>
   

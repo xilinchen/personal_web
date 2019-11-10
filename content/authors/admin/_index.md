@@ -14,6 +14,7 @@ email: "xilin.chen24@gmail.com"
 interests:
 - Healthcare Research
 - Data Science
+- Big Data 
 name: Xilin Chen
 organizations:
 - name: University of Michigan
@@ -32,7 +33,7 @@ social:
   link: https://github.com/xilinchen
 superuser: true
 user_groups:
-- Researchers
+# - Researchers
 # - Visitors
 ---
 

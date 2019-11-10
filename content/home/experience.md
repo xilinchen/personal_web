@@ -28,8 +28,8 @@ date_format = "Jan 2006"
 
   Responsibilities include:
   
-  * Analyzing
-  * Modelling
+  * Data Management
+  * Analyzing/Modelling
   * Visualization
   """
 

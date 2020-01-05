@@ -41,4 +41,4 @@ I'm a data scientist with expertise in healthcare research. I enjoy learning new
 
 I'm originally from [Chengdu](https://en.wikipedia.org/wiki/Chengdu) and moved to the U.S. for my master's degree. My career has been majorly focus on healthcare related research including substance abuse, trauma transportation and surgical education. I found working in healthcare research very challenging and fulfilling! Today I am a statistician for the Center for Surgical Training and Research at the University of Michigan.
 
-My first name is pronounced "She-lynn". In my free time, I enjoy walking, gardening, cooking and trying new restaurants! 
+My first name is pronounced "She-lynn". In my free time, I enjoy going for walks, gardening, cooking and trying new restaurants! 

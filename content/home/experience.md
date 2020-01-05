@@ -24,7 +24,7 @@ date_format = "Jan 2006"
   location = "Ann Arbor, Michigan"
   date_start = "2018-07-01"
   date_end = ""
-  description = """Wrote reproducible code in R for data processing, data linkage, statistical analysis and visualization
+  description = """Write reproducible code in R for data processing, data linkage, statistical analysis and visualization
 
   Responsibilities include:
   

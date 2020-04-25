@@ -36,3 +36,9 @@ vignettes/*.pdf
 *.knit.md
 
 /public
+content/.DS_Store
+
+content/post/.DS_Store
+
+
+.DS_Store

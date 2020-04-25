@@ -5,12 +5,33 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 09 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 25 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Build Your First Shiny App</title>
+      <link>/post/build-your-ffrst-shiny-app/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/build-your-ffrst-shiny-app/</guid>
+      <description>
+
+&lt;h1 id=&#34;intro-and-backgroud&#34;&gt;Intro and Backgroud&lt;/h1&gt;
+
+&lt;p&gt;Several weeks ago I started working on my first Shiny app in response for the Covid19 staffing needs. The team I worked with have a understanding of their needs but don&amp;rsquo;t really have a solid specs of how we want to impliment the ideas to form actual products that could help hospitals and nursing homes. Luckily, in our team, we have physicians, hospital admins and medical students who all have deep understanding of their needs and how they would like to get helped.&lt;/p&gt;
+
+&lt;p&gt;Anyway, this was a pretty urgent task since the rapid growing Covid patients. The earlier we got the application done, the hospitals and admins can start to use imidiatly to adress their problems.&lt;/p&gt;
+
+&lt;p&gt;Finally, I have never build Shiny app before but I have some understandings of the features and potentials that I could achieve in Shiny. So I started my Shiny jurneay and actally got my first shiny apps. In this post, I want to share some of my experience hoping it could help some new users like me.&lt;/p&gt;
+
+&lt;h1 id=&#34;content&#34;&gt;Content&lt;/h1&gt;
+
+&lt;h2 id=&#34;basics-you-need-you-know&#34;&gt;Basics you need you know&lt;/h2&gt;
+</description>
+    </item>
     
     <item>
       <title>Some Tips for Using Sparklyr</title>

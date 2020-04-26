@@ -114,11 +114,11 @@
 
 &lt;h1 id=&#34;intro-and-background&#34;&gt;Intro and Background&lt;/h1&gt;
 
-&lt;p&gt;Several weeks ago I started working on my first Shiny app in response for the Covid19 staffing needs. The team I worked with have an understanding of their needs but don&amp;rsquo;t really have a solid specs of how we want to implement the ideas to form actual products that could help hospitals and nursing homes. Luckily, in our team, we have physicians, hospital admins and medical students who all know the needs and gaps, and how they would like to get helped.&lt;/p&gt;
+&lt;p&gt;Several weeks ago, I started working on my first Shiny app in response for the Covid19 staffing needs. The team I worked with have understandings of their needs, but didn&amp;rsquo;t really have solid specs of how we wanted to implement the ideas to form actual products that could help hospitals and nursing homes. Luckily, in our team, we had physicians, hospital admins and medical students who knew the needs and gaps, and how they would like to get help.&lt;/p&gt;
 
-&lt;p&gt;Anyway, this was a pretty urgent task since the rapid growing Covid patients. The earlier we got the application done, the hospitals and admins can start to use immediately to address their problems.&lt;/p&gt;
+&lt;p&gt;Anyway, this was a pretty urgent task since the rapid growing number of Covid patients. The earlier we got the application done, the earlier that hospitals and admins could start to use it to address their problems.&lt;/p&gt;
 
-&lt;p&gt;Finally, I have never build Shiny app before but I have some understandings of the features and potentials that I could achieve in Shiny. So I started my Shiny journey and actually got my first shiny apps. In this post, I want to share some of my experience hoping it could help some new users like me. To find the Shiny app I build, you can check this &lt;a href=&#34;https://github.com/UMCSTaR/staff_projection&#34; target=&#34;_blank&#34;&gt;repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Finally, I have never built a Shiny app before, but I had some understanding of the features and potential that I could achieve in Shiny. So I started my Shiny journey and actually completed my first shiny apps. In this post, I want to share some of my experience hoping it will help some new users like me. To find the Shiny app I built, you can check this &lt;a href=&#34;https://github.com/UMCSTaR/staff_projection&#34; target=&#34;_blank&#34;&gt;repo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;content&#34;&gt;Content&lt;/h1&gt;
 
@@ -126,13 +126,13 @@
 
 &lt;h3 id=&#34;ui-and-server&#34;&gt;UI and Server&lt;/h3&gt;
 
-&lt;p&gt;I like to keep UI and Serve in different files instead of lumping it into one script. It makes my life much easier in the long run.&lt;/p&gt;
+&lt;p&gt;Shiny requires a UI component and a Server component. I like to keep UI and Server in different files instead of lumping them into one script. It makes my life much easier in the long run.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;UI&lt;/strong&gt;: Anything related to the application user interface design is located in this file. For example, how you want you page look like (color, fond, titles, buttons, sliders etc.)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UI&lt;/strong&gt;: Anything related to the application user interface design is located in this file. For example, how you want your page look like (color, fond, titles, buttons, sliders etc.)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Sever&lt;/strong&gt;: Your normal R code lives here. For example, your tidyverse data cleaning, join tables, running models, generate ggplots are here.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sever&lt;/strong&gt;: Your normal R code lives here. For example, your data cleaning, table joins, running models, generating plots are here.&lt;/p&gt;
 
-&lt;p&gt;With that been said, the most significant difference is that when you need a variable to be reactive (or interactive based on your inputs), you need to use &lt;code&gt;input$your_reactive_variable_name&lt;/code&gt; in the Server script. In the UI script, the interactive variable should be the same name as &lt;code&gt;your_reactive_variable_name&lt;/code&gt;, so UI and Server can talk to each other and know to how react.&lt;/p&gt;
+&lt;p&gt;With that been said, the most significant difference between what you have in the Server code and normal R code is reactive inputs. When you need a variable to be reactive (or interactive based on your inputs), you need to use &lt;code&gt;input$your_reactive_variable_name&lt;/code&gt; in the Server script. In the UI script, the interactive variable should be the same name as &lt;code&gt;your_reactive_variable_name&lt;/code&gt;, so UI and Server can talk to each other.&lt;/p&gt;
 
 &lt;p&gt;Below is an example to demonstrate the idea:&lt;/p&gt;
 
@@ -166,14 +166,14 @@ server &amp;lt;- function(input, output) {
 shinyApp(ui = ui, server = server)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;From the example above, how the output get display was also demonstrated. &lt;code&gt;changing_numbers&lt;/code&gt; in the UI script is the output your wanted to display. As you can see, in the server script, &lt;code&gt;output$changing_numbers&lt;/code&gt; was used to
+&lt;p&gt;In the example above, I also demonstrated how to display the &lt;code&gt;output&lt;/code&gt;. &lt;code&gt;changing_numbers&lt;/code&gt; in the UI script is the output I wanted to display. As you can see, in the Server script, &lt;code&gt;output$changing_numbers&lt;/code&gt; was used to
 communicate with UI. You always need to use &lt;code&gt;output$&lt;/code&gt; in your Server script if you want to output something in the UI.&lt;/p&gt;
 
 &lt;h3 id=&#34;input-and-output&#34;&gt;Input and Output&lt;/h3&gt;
 
-&lt;p&gt;Let look at UI first, I like to separate input and output using &lt;code&gt;sidebarPanel&lt;/code&gt; and &lt;code&gt;mainPanel&lt;/code&gt; respectively. It makes things easier for beginner.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s look at UI first. I like to separate input and output using &lt;code&gt;sidebarPanel&lt;/code&gt; and &lt;code&gt;mainPanel&lt;/code&gt; respectively. It makes things easier for a beginner like me.&lt;/p&gt;
 
-&lt;p&gt;In the &lt;code&gt;sidebarPanel&lt;/code&gt;, I would put all the input values there. You can design your inputs in UI first without worrying the server script ,like numeric &lt;code&gt;my_interactive_var2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;sidebarPanel&lt;/code&gt;, I would put all the input values there. You can design your inputs in UI first without worrying the server script, like the numeric input &lt;code&gt;my_interactive_var2&lt;/code&gt; below.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(shiny)
 
@@ -213,7 +213,7 @@ shinyApp(ui = ui, server = server)
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In the &lt;code&gt;mainPanel&lt;/code&gt;, here is where you could define all your output, for example, tables, plots or a sentence.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;mainPanel&lt;/code&gt;is where you can define all your outputs, for example, tables, plots or a sentence.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;rsquo;s add a table.&lt;/p&gt;
 
@@ -268,7 +268,7 @@ shinyApp(ui = ui, server = server)
 
 &lt;h1 id=&#34;end&#34;&gt;End&lt;/h1&gt;
 
-&lt;p&gt;Hopefully, this simple introduction could help you a little when you first started your Shiny journey. Once you get the gist of it, you can build up a lot cool features by just googling how. Also, looking for Shiny examples other people put out there was very helpful for me to know the potential and what I can achieve. One of the most difficult things when you get started is ti know what the possibilities are.&lt;/p&gt;
+&lt;p&gt;Hopefully, this simple introduction can help you a little when you first started your Shiny journey. Once you get the gist of it, you can build up a lot cool features by just googling how. Also, looking at Shiny examples other people put out there was very helpful for me to know the potential with Shiny. One of the most difficult things when you get started is to know what the possibilities are.&lt;/p&gt;
 
 &lt;p&gt;Most importantly, Have fun!&lt;/p&gt;
 

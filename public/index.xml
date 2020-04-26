@@ -107,22 +107,172 @@
     
     <item>
       <title>Build Your First Shiny App</title>
-      <link>/post/build-your-ffrst-shiny-app/</link>
+      <link>/post/first_shiny_app/</link>
       <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/post/build-your-ffrst-shiny-app/</guid>
+      <guid>/post/first_shiny_app/</guid>
       <description>
 
-&lt;h1 id=&#34;intro-and-backgroud&#34;&gt;Intro and Backgroud&lt;/h1&gt;
+&lt;h1 id=&#34;intro-and-background&#34;&gt;Intro and Background&lt;/h1&gt;
 
-&lt;p&gt;Several weeks ago I started working on my first Shiny app in response for the Covid19 staffing needs. The team I worked with have a understanding of their needs but don&amp;rsquo;t really have a solid specs of how we want to impliment the ideas to form actual products that could help hospitals and nursing homes. Luckily, in our team, we have physicians, hospital admins and medical students who all have deep understanding of their needs and how they would like to get helped.&lt;/p&gt;
+&lt;p&gt;Several weeks ago I started working on my first Shiny app in response for the Covid19 staffing needs. The team I worked with have an understanding of their needs but don&amp;rsquo;t really have a solid specs of how we want to implement the ideas to form actual products that could help hospitals and nursing homes. Luckily, in our team, we have physicians, hospital admins and medical students who all know the needs and gaps, and how they would like to get helped.&lt;/p&gt;
 
-&lt;p&gt;Anyway, this was a pretty urgent task since the rapid growing Covid patients. The earlier we got the application done, the hospitals and admins can start to use imidiatly to adress their problems.&lt;/p&gt;
+&lt;p&gt;Anyway, this was a pretty urgent task since the rapid growing Covid patients. The earlier we got the application done, the hospitals and admins can start to use immediately to address their problems.&lt;/p&gt;
 
-&lt;p&gt;Finally, I have never build Shiny app before but I have some understandings of the features and potentials that I could achieve in Shiny. So I started my Shiny jurneay and actally got my first shiny apps. In this post, I want to share some of my experience hoping it could help some new users like me.&lt;/p&gt;
+&lt;p&gt;Finally, I have never build Shiny app before but I have some understandings of the features and potentials that I could achieve in Shiny. So I started my Shiny journey and actually got my first shiny apps. In this post, I want to share some of my experience hoping it could help some new users like me. To find the Shiny app I build, you can check this &lt;a href=&#34;https://github.com/UMCSTaR/staff_projection&#34; target=&#34;_blank&#34;&gt;repo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;content&#34;&gt;Content&lt;/h1&gt;
 
-&lt;h2 id=&#34;basics-you-need-you-know&#34;&gt;Basics you need you know&lt;/h2&gt;
+&lt;h2 id=&#34;let-s-get-started&#34;&gt;Let&amp;rsquo;s get started&lt;/h2&gt;
+
+&lt;h3 id=&#34;ui-and-server&#34;&gt;UI and Server&lt;/h3&gt;
+
+&lt;p&gt;I like to keep UI and Serve in different files instead of lumping it into one script. It makes my life much easier in the long run.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UI&lt;/strong&gt;: Anything related to the application user interface design is located in this file. For example, how you want you page look like (color, fond, titles, buttons, sliders etc.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sever&lt;/strong&gt;: Your normal R code lives here. For example, your tidyverse data cleaning, join tables, running models, generate ggplots are here.&lt;/p&gt;
+
+&lt;p&gt;With that been said, the most significant difference is that when you need a variable to be reactive (or interactive based on your inputs), you need to use &lt;code&gt;input$your_reactive_variable_name&lt;/code&gt; in the Server script. In the UI script, the interactive variable should be the same name as &lt;code&gt;your_reactive_variable_name&lt;/code&gt;, so UI and Server can talk to each other and know to how react.&lt;/p&gt;
+
+&lt;p&gt;Below is an example to demonstrate the idea:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(shiny)
+
+# UI: define how the app looks
+ui &amp;lt;- fluidPage(sidebarLayout(
+
+sidebarPanel(
+    # my_interactive_var1 is defined here
+    sliderInput(
+        &amp;quot;my_interactive_var1&amp;quot;,
+        &amp;quot;Number of bins:&amp;quot;,
+        min = 1,
+        max = 50,
+        value = 30
+    )
+),
+
+mainPanel(textOutput(&amp;quot;changing_numbers&amp;quot;))))
+
+# Server: nomal R code
+server &amp;lt;- function(input, output) {
+    output$changing_numbers &amp;lt;- renderText({
+        # using input$my_interactive_var1 to communicate with UI
+        paste0(&amp;quot;My changing values: &amp;quot;, input$my_interactive_var1)
+    })
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;From the example above, how the output get display was also demonstrated. &lt;code&gt;changing_numbers&lt;/code&gt; in the UI script is the output your wanted to display. As you can see, in the server script, &lt;code&gt;output$changing_numbers&lt;/code&gt; was used to
+communicate with UI. You always need to use &lt;code&gt;output$&lt;/code&gt; in your Server script if you want to output something in the UI.&lt;/p&gt;
+
+&lt;h3 id=&#34;input-and-output&#34;&gt;Input and Output&lt;/h3&gt;
+
+&lt;p&gt;Let look at UI first, I like to separate input and output using &lt;code&gt;sidebarPanel&lt;/code&gt; and &lt;code&gt;mainPanel&lt;/code&gt; respectively. It makes things easier for beginner.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;code&gt;sidebarPanel&lt;/code&gt;, I would put all the input values there. You can design your inputs in UI first without worrying the server script ,like numeric &lt;code&gt;my_interactive_var2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(shiny)
+
+# UI: define how the app looks
+ui &amp;lt;- fluidPage(sidebarLayout(sidebarPanel(
+  # my_interactive_var1 is defined here
+  sliderInput(
+    &amp;quot;my_interactive_var1&amp;quot;,
+    &amp;quot;Number of bins:&amp;quot;,
+    min = 1,
+    max = 50,
+    value = 30
+  ),
+  
+  # add a new entry here
+  numericInput(
+    &amp;quot;my_interactive_var2&amp;quot;,
+    &amp;quot;My number entry&amp;quot;,
+    min = 1,
+    max = 50,
+    value = 30
+  )
+),
+
+mainPanel(textOutput(&amp;quot;changing_numbers&amp;quot;))))
+
+# Server: nomal R code
+server &amp;lt;- function(input, output) {
+  output$changing_numbers &amp;lt;- renderText({
+    # using input$my_interactive_var1 to communicate with UI
+    paste0(&amp;quot;My changing values: &amp;quot;, input$my_interactive_var1)
+  })
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the &lt;code&gt;mainPanel&lt;/code&gt;, here is where you could define all your output, for example, tables, plots or a sentence.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s add a table.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(shiny)
+library(tidyverse)
+
+# UI: define how the app looks
+ui &amp;lt;- fluidPage(sidebarLayout(sidebarPanel(
+  # my_interactive_var1 is defined here
+  sliderInput(
+    &amp;quot;my_interactive_var1&amp;quot;,
+    &amp;quot;Number of bins:&amp;quot;,
+    min = 1,
+    max = 50,
+    value = 30
+  ),
+  
+  numericInput(
+    &amp;quot;my_interactive_var2&amp;quot;,
+    &amp;quot;My number entry&amp;quot;,
+    min = 1,
+    max = 50,
+    value = 30
+  )
+),
+
+mainPanel(
+  textOutput(&amp;quot;changing_numbers&amp;quot;),
+  # add my defined table here
+  tableOutput(&amp;quot;my_defined_table&amp;quot;)
+  )))
+
+# Server: nomal R code
+server &amp;lt;- function(input, output) {
+  output$changing_numbers &amp;lt;- renderText({
+    # using input$my_interactive_var1 to communicate with UI
+    paste0(&amp;quot;My changing values: &amp;quot;, input$my_interactive_var1)
+  })
+  
+
+  # my define table is here, use output$output$my_defined_table
+  output$my_defined_table &amp;lt;- renderTable({
+    iris %&amp;gt;% 
+      head()
+  })
+  
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;end&#34;&gt;End&lt;/h1&gt;
+
+&lt;p&gt;Hopefully, this simple introduction could help you a little when you first started your Shiny journey. Once you get the gist of it, you can build up a lot cool features by just googling how. Also, looking for Shiny examples other people put out there was very helpful for me to know the potential and what I can achieve. One of the most difficult things when you get started is ti know what the possibilities are.&lt;/p&gt;
+
+&lt;p&gt;Most importantly, Have fun!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./fun.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

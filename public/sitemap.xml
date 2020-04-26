@@ -33,23 +33,23 @@
   </url>
   
   <url>
-    <loc>/post/build-your-ffrst-shiny-app/</loc>
-    <lastmod>2020-04-25T12:02:54-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-04-25T12:02:54-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/</loc>
-    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/first_shiny_app/</loc>
+    <lastmod>2020-04-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>

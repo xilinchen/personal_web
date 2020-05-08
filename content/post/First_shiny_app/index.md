@@ -1,7 +1,8 @@
 ---
 authors:
-- admin
-categories: []
+  - admin
+categories: 
+  - Shiny
 date: "2020-04-25T00:00:00Z"
 draft: false
 featured: false
@@ -12,11 +13,16 @@ lastMod: "2020-04-25T00:00:00Z"
 projects: []
 subtitle: Guidance to start your first shiny app
 summary: Basics of starting Shiny app
-tags: []
+tags: 
+  - Shiny
 title: Build Your First Shiny App
+output:
+  blogdown::html_page:
+    toc: yes
+    toc_depth: 2
 ---
 
-# Intro and Background
+# Intro 
 
 Several weeks ago, I started working on my first Shiny app in response for the Covid19 staffing needs. The team I worked with have understandings of their needs, but didn't really have solid specs of how we wanted to implement the ideas to form actual products that could help hospitals and nursing homes. Luckily, in our team, we had physicians, hospital admins and medical students who knew the needs and gaps, and how they would like to get help.
 

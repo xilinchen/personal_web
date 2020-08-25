@@ -5,12 +5,41 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 25 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 23 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Big Data in R</title>
+      <link>/post/big_data_with_r/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/big_data_with_r/</guid>
+      <description>
+
+&lt;p&gt;In my current position, I work with data with various sizes. Small data like several hundred observations with dozens of variable to data for several hundred gigabytes. In this post I want to talk about what to use depends on the size of your data, and pros and cons of diffrent packages you might come across.&lt;/p&gt;
+
+&lt;h2 id=&#34;define-dataset-size&#34;&gt;Define dataset size&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Small data
+Data that you can load instantly. (For me is I can just want it load and not need to open my chome brower to keep myslef occupid)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Medium data
+Data that you can load in within minutes to overnight to load, but fits in memory&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Big data
+Data can&amp;rsquo;t fit in your memory but can fit in your desk&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Super big data
+Data that can&amp;rsquo;t fit in your desk and need cloud.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;stateges&#34;&gt;Stateges&lt;/h2&gt;
+</description>
+    </item>
     
     <item>
       <title>Build Your First Shiny App</title>

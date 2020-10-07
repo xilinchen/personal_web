@@ -5,12 +5,129 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Xilin Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 23 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 07 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Xilin Chen</title>
       <link>/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>R Functional Programming</title>
+      <link>/post/functional_programing/</link>
+      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/functional_programing/</guid>
+      <description>&lt;p&gt;I write functions involving variables names from datasets a lot. But, I always find myself googling how everytime. I think it&amp;rsquo;s hard because it involves treating the variable names differently than just strings, and it requires some special symbols I rarely use.&lt;/p&gt;
+
+&lt;p&gt;The code below demonstrates several different scenarios.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;use variable names.&lt;code&gt;enquo()&lt;/code&gt; and &lt;code&gt;!!&lt;/code&gt; are used in pair&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(tidyverse)
+# group by a variable from data
+group_by_var &amp;lt;- function(data, group_var) {
+  group_var &amp;lt;- enquo(group_var)
+
+  data %&amp;gt;% 
+    group_by(!!group_var) %&amp;gt;% 
+    summarise(n = n())
+}
+
+#  don&#39;t use &amp;quot;&amp;quot; for the variable name
+group_by_var(mtcars, cyl)
+# A tibble: 3 x 2
+#     cyl     n
+#   &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;
+# 1     4    11
+# 2     6     7
+# 3     8    14
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;To get string value of the variable, use &lt;code&gt;as_label()&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;grouped_mean &amp;lt;- function(data, group_var) {
+  group_var &amp;lt;- enquo(group_var)
+
+  # create new names based on chosen names
+  new_name = paste0(as_label(group_var), &amp;quot;.n&amp;quot;)
+
+  print(new_name)
+}
+
+grouped_mean(mtcars, cyl)
+# [1] &amp;quot;cyl.n&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create a new variable use pair &lt;code&gt;!!&lt;/code&gt; and &lt;code&gt;:=&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;create_new_var &amp;lt;- function(data, old_var, new_var) {
+  old_var =  enquo(old_var)
+  new_var =  enquo(new_var)
+
+  # create new name on the fly = old_var+new_var
+  sum_all = paste0(as_label(old_var), &amp;quot;_&amp;quot;, as_label(new_var))
+
+  data %&amp;gt;% 
+    mutate(!!new_var := !!old_var*3,
+           !!sum_all := !!old_var + !!new_var) %&amp;gt;% 
+    select(!!old_var, !!new_var, !!sum_all) %&amp;gt;% 
+    head(2)
+}
+
+#  don&#39;t use &amp;quot;&amp;quot; for the variable name
+create_new_var(mtcars, cyl, time_3)
+#   cyl time_3 cyl_time_3
+# 1   6     18         24
+# 2   6     18         24
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Filter created variables using &lt;code&gt;!!rlang::sym(new_var)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;create_new_var &amp;lt;- function(data, old_var) {
+  old_var =  enquo(old_var)
+
+  # create new name = old_var+new_var
+  new_var = paste0(as_label(old_var), &amp;quot;_new_binary&amp;quot;)
+
+  data %&amp;gt;% 
+    head(10) %&amp;gt;% 
+    mutate(!!new_var := c(1:10))  %&amp;gt;% 
+    filter(!!rlang::sym(new_var) != 10,
+           !!old_var == 4) %&amp;gt;%
+    mutate(!!new_var := ifelse(
+      !!rlang::sym(new_var)&amp;gt;5,
+      &amp;quot;not good&amp;quot;,
+      &amp;quot;good&amp;quot;
+    )) %&amp;gt;%
+    select(!!old_var, !!new_var) 
+}
+
+create_new_var(mtcars, cyl)
+#   cyl cyl_new_binary
+# 1   4          good
+# 2   4      not good
+# 3   4      not good
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Useful debugging tool &lt;code&gt;rlang::qq_show&lt;/code&gt; to show actual values to help you better understand what&amp;rsquo;s going on with all the !! and quo&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(tidyverse)
+
+group_by_var &amp;lt;- function(data, group_var) {
+  group_var &amp;lt;- enquo(group_var)
+      
+  rlang::qq_show(data %&amp;gt;%
+                   group_by(!!group_var) %&amp;gt;%
+                   summarise(n = n()))
+}
+    
+group_by_var(mtcars, cyl)
+# data %&amp;gt;% group_by(^cyl) %&amp;gt;% summarise(n = n())
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Big Data in R</title>
@@ -37,7 +154,23 @@ Data can&amp;rsquo;t fit in your memory but can fit in your desk&lt;/p&gt;&lt;/l
 Data that can&amp;rsquo;t fit in your desk and need cloud.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;stateges&#34;&gt;Stateges&lt;/h2&gt;
+&lt;h2 id=&#34;strateges&#34;&gt;Strateges&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Samll data
+For small data, my favorate is &lt;strong&gt;tidyverse&lt;/strong&gt; and pipe. It&amp;rsquo;s just very human readable and frendly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here are some basics syntex
+  - &lt;em&gt;select&lt;/em&gt;: subset columns
+  - &lt;em&gt;filter&lt;/em&gt;: subset rows
+  - &lt;em&gt;left_join&lt;/em&gt;: two datasets join
+  - stc&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Medium data
+For medium data, my favorate is &lt;strong&gt;data.table&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

@@ -6,10 +6,10 @@ education:
   courses:
   - course: Master of Public Health
     institution: University of Pittsburgh
-    year: 2016
+    # year: 2016
   - course: BSc in Food Science and Engineering
     institution: Sichuan Agricultural University
-    year: 2014
+    # year: 2014
 email: "xilin.chen24@gmail.com"
 interests:
 - Healthcare Research
@@ -28,6 +28,9 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/xilin-chen-31801b98/
+- icon: twitter
+  icon_pack: fab
+  link: https://twitter.com/xilinch
 - icon: github
   icon_pack: fab
   link: https://github.com/xilinchen
@@ -37,8 +40,8 @@ user_groups:
 # - Visitors
 ---
 
-I'm a data scientist with expertise in healthcare research. I enjoy learning new data analysis techniques, solving analytic challenges, and creating interpretatble visualization.
+I'm a data scientist with expertise in healthcare research. I enjoy learning new data analysis techniques and solving analytic challenges! 
 
-I'm originally from [Chengdu](https://en.wikipedia.org/wiki/Chengdu) and moved to the U.S. for my master's degree. My career has been majorly focus on healthcare related research including substance abuse, trauma transportation and surgical education. I found working in healthcare research very challenging and fulfilling! Today I am a statistician for the [Center for Surgical Training and Research](https://medicine.umich.edu/dept/surgery/news/archive/201903/center-surgical-training-research) at the University of Michigan.
+I'm originally from [Chengdu](https://en.wikipedia.org/wiki/Chengdu) and moved to the U.S. for my master's degree. My career has been majorly focus on healthcare related research including substance abuse, trauma transportation and surgical education. I found working in healthcare research very challenging and fulfilling! Today I am a statistician for the [Center for Surgical Training and Research](https://medicine.umich.edu/dept/surgery/news/archive/201903/center-surgical-training-research) at the University of Michigan. 
 
-My first name is pronounced "She-lynn". In my free time, I enjoy going for walks, gardening, cooking and trying new restaurants! 
+My first name is pronounced "She-lin". In my free time, I like going for walks, gardening, cooking and trying new restaurants! 

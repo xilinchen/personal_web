@@ -18,18 +18,24 @@ subtitle = ""
   icon = "r-project"
   icon_pack = "fab"
   name = "R"
-  description = ""
+  description = "pretty good"
+  
+[[feature]]
+  icon = "python"
+  icon_pack = "fab"
+  name = "Python"
+  description = "beginner"
   
 [[feature]]
   icon = "chart-line"
   icon_pack = "fas"
   name = "Statistics"
-  description = ""  
+  description = "well trained"  
   
 [[feature]]
   icon = "carrot"
   icon_pack = "fas"
   name = "Cooking"
-  description = ""
+  description = "food scientist"
 
 +++

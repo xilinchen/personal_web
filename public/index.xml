@@ -223,51 +223,6 @@ group_by_var(mtcars, cyl)
     </item>
     
     <item>
-      <title>Big Data in R</title>
-      <link>/post/big_data_with_r/</link>
-      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/post/big_data_with_r/</guid>
-      <description>
-
-&lt;p&gt;In my current position, I work with data with various sizes. Small data like several hundred observations with dozens of variable to data for several hundred gigabytes. In this post I want to talk about what to use depends on the size of your data, and pros and cons of diffrent packages you might come across.&lt;/p&gt;
-
-&lt;h2 id=&#34;define-dataset-size&#34;&gt;Define dataset size&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Small data
-Data that you can load instantly. (For me is I can just want it load and not need to open my chome brower to keep myslef occupid)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Medium data
-Data that you can load in within minutes to overnight to load, but fits in memory&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Big data
-Data can&amp;rsquo;t fit in your memory but can fit in your desk&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Super big data
-Data that can&amp;rsquo;t fit in your desk and need cloud.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;strateges&#34;&gt;Strateges&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Samll data
-For small data, my favorate is &lt;strong&gt;tidyverse&lt;/strong&gt; and pipe. It&amp;rsquo;s just very human readable and frendly.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Here are some basics syntex
-  - &lt;em&gt;select&lt;/em&gt;: subset columns
-  - &lt;em&gt;filter&lt;/em&gt;: subset rows
-  - &lt;em&gt;left_join&lt;/em&gt;: two datasets join
-  - stc&amp;hellip;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Medium data
-For medium data, my favorate is &lt;strong&gt;data.table&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Build Your First Shiny App</title>
       <link>/post/first_shiny_app/</link>
       <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>

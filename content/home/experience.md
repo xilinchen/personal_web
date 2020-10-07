@@ -18,19 +18,20 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "Statistician Intermediate"
+  title = "Big Data Analyst"
   company = "University of Michigan"
   company_url = ""
   location = "Ann Arbor, Michigan"
   date_start = "2018-07-01"
   date_end = ""
-  description = """Write reproducible code in R for data processing, data linkage, statistical analysis and visualization
+  description = """Write reproducible code in R, SAS and Python for data processing, data linkage, statistical analysis and visualization
 
   Responsibilities include:
   
   * Data Management
-  * Analyzing/Modelling
+  * Analyzing/Modeling
   * Visualization
+  
   """
 
 [[experience]]

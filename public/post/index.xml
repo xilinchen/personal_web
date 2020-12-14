@@ -110,6 +110,23 @@ create_new_var(mtcars, cyl)
 # 3   4      not good
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
+&lt;li&gt;&lt;p&gt;Take list of quoted strings to use in map.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;select_quoted_var &amp;lt;- function(data, quoted_var_from_list) {
+data %&amp;gt;%
+  head(10) %&amp;gt;%
+  select(!!rlang::sym(quoted_var_from_list)) %&amp;gt;% 
+  summarise(sum = sum(!!rlang::sym(quoted_var_from_list))) %&amp;gt;% 
+  mutate(var = quoted_var_from_list) %&amp;gt;% 
+  select(var, sum)
+}
+  
+# Have to pass the variable names as string
+map_df(names(mtcars),
+      ~ select_quoted_var(data = mtcars,
+                          quoted_var_from_list = .x))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
 &lt;li&gt;&lt;p&gt;Useful debugging tool &lt;code&gt;rlang::qq_show&lt;/code&gt; to show actual values to help you better understand what&amp;rsquo;s going on with all the !! and quo&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(tidyverse)

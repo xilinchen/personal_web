@@ -8,7 +8,7 @@ featured: false
 image:
   caption: ""
 focal_point: ""
-lastMod: "`r 2020-10-07T00:00:00Z`"
+lastMod: "`r 2020-12-14T00:00:00Z`"
 projects: []
 subtitle: writing R functions involving variables
 summary: writing R functions involving dynamic variable names from data
@@ -111,7 +111,26 @@ The code below demonstrates several different scenarios.
     # 2   4      not good
     # 3   4      not good
     ```
-5. Useful debugging tool `rlang::qq_show` to show actual values to help you better understand what's going on with all the !! and quo
+    
+5. Take list of quoted strings to use in map.
+
+  ```r
+  select_quoted_var <- function(data, quoted_var_from_list) {
+    data %>%
+      head(10) %>%
+      select(!!rlang::sym(quoted_var_from_list)) %>% 
+      summarise(sum = sum(!!rlang::sym(quoted_var_from_list))) %>% 
+      mutate(var = quoted_var_from_list) %>% 
+      select(var, sum)
+  }
+  
+  # Have to pass the variable names as string
+  map_df(names(mtcars),
+          ~ select_quoted_var(data = mtcars,
+                              quoted_var_from_list = .x))
+  ```
+    
+6. Useful debugging tool `rlang::qq_show` to show actual values to help you better understand what's going on with all the !! and quo
 
     ```r
     library(tidyverse)

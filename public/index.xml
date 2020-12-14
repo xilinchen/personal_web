@@ -203,6 +203,23 @@ create_new_var(mtcars, cyl)
 # 3   4      not good
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
+&lt;li&gt;&lt;p&gt;Take list of quoted strings to use in map.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;select_quoted_var &amp;lt;- function(data, quoted_var_from_list) {
+data %&amp;gt;%
+  head(10) %&amp;gt;%
+  select(!!rlang::sym(quoted_var_from_list)) %&amp;gt;% 
+  summarise(sum = sum(!!rlang::sym(quoted_var_from_list))) %&amp;gt;% 
+  mutate(var = quoted_var_from_list) %&amp;gt;% 
+  select(var, sum)
+}
+  
+# Have to pass the variable names as string
+map_df(names(mtcars),
+      ~ select_quoted_var(data = mtcars,
+                          quoted_var_from_list = .x))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
 &lt;li&gt;&lt;p&gt;Useful debugging tool &lt;code&gt;rlang::qq_show&lt;/code&gt; to show actual values to help you better understand what&amp;rsquo;s going on with all the !! and quo&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(tidyverse)
@@ -457,6 +474,9 @@ sc &amp;lt;- spark_connect(master = &amp;quot;local&amp;quot;)
       <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
       <guid>/fun/apple_picking/</guid>
       <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;I recently went to apple picking on a sunny weekend. Fall in Michigan especially around this time is very beautiful. Going to apple picking is a nice activity to enjoy the fall foliage in the country and get some workout by working and picking the apples.&lt;/p&gt;
